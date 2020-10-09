@@ -19,9 +19,9 @@ async function getCovidData() {
   );
 }
 
-router.get("/", async function(req, res, next) {
+router.get("/covid-19-json", async function(req, res, next) {
   var resData = await getCovidData();
-	res.send(JSON.stringify(resData.data, null, 2));
+	res.send(JSON.stringify(resData.data));
 });
 
 module.exports = router;
